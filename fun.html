@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Sign In / Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #0f0f0f;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            perspective: 1000px;
+        }
+
+        /* Parallax Background */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('background.jpg') no-repeat center center/cover;
+            filter: blur(10px);
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        body:hover::before {
+            transform: scale(1.05);
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Panel Sliding Effect */
+        .panel {
+            width: 200%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .container.active .panel {
+            transform: translateX(-50%);
+        }
+
+        /* Form Container */
+        .form-container {
+            width: 50%;
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        /* Glowing Input Fields */
+        .glowing-input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 5px;
+            transition: box-shadow 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        .glowing-input:focus {
+            box-shadow: 0 0 10px cyan;
+            animation: glow-pulse 1.5s infinite alternate;
+        }
+
+        @keyframes glow-pulse {
+            from {
+                box-shadow: 0 0 10px cyan;
+            }
+
+            to {
+                box-shadow: 0 0 20px cyan;
+            }
+        }
+
+        /* Neon Buttons */
+        .neon-button {
+            background: transparent;
+            border: 2px solid cyan;
+            color: cyan;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .neon-button:hover {
+            background: cyan;
+            color: #000;
+            box-shadow: 0 0 15px cyan;
+        }
+
+        /* Slider Panel */
+        .slider-panel {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .container.active .slider-panel {
+            transform: translateX(100%);
+        }
+
+        /* Social Login Buttons */
+        .social-login {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Error Shake Animation */
+        .error {
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel">
+            <div class="form-container sign-in">
+                <h2>Sign In</h2>
+                <input type="text" placeholder="Username" class="glowing-input">
+                <input type="password" placeholder="Password" class="glowing-input">
+                <button class="neon-button">Sign In</button>
+                <p>Don't have an account? <span class="toggle">Sign Up</span></p>
+            </div>
+            <div class="form-container sign-up">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Username" class="glowing-input">
+                <input type="email" placeholder="Email" class="glowing-input">
+                <input type="password" placeholder="Password" class="glowing-input">
+                <button class="neon-button">Sign Up</button>
+                <p>Already have an account? <span class="toggle">Sign In</span></p>
+            </div>
+        </div>
+        <div class="slider-panel"></div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const toggleButtons = document.querySelectorAll(".toggle");
+    const panel = document.querySelector(".panel");
+    const sliderPanel = document.querySelector(".slider-panel");
+    const signInForm = document.querySelector(".sign-in");
+    const signUpForm = document.querySelector(".sign-up");
+
+    let isSignUp = false;
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            isSignUp = !isSignUp;
+            panel.style.transform = isSignUp ? "translateX(-50%)" : "translateX(0)";
+            sliderPanel.style.transform = isSignUp ? "translateX(100%)" : "translateX(0)";
+        });
+    });
+
+    // Input validation with shake effect
+    document.querySelectorAll(".neon-button").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const inputs = e.target.parentElement.querySelectorAll(".glowing-input");
+            let valid = true;
+            inputs.forEach(input => {
+                if (input.value.trim() === "") {
+                    valid = false;
+                    input.classList.add("error");
+                    setTimeout(() => input.classList.remove("error"), 500);
+                }
+            });
+        });
+    });
+
+    // Autofill detection
+    document.querySelectorAll(".glowing-input").forEach(input => {
+        input.addEventListener("animationstart", (e) => {
+            if (e.animationName === "onAutoFillStart") {
+                input.classList.add("autofilled");
+            }
+        });
+        input.addEventListener("animationend", (e) => {
+            if (e.animationName === "onAutoFillEnd") {
+                input.classList.remove("autofilled");
+            }
+        });
+    });
+
+    // 3D Parallax Background Effect
+    document.addEventListener("mousemove", (e) => {
+        let x = (window.innerWidth - e.pageX * 2) / 90;
+        let y = (window.innerHeight - e.pageY * 2) / 90;
+        document.body.style.backgroundPosition = `${x}px ${y}px`;
+    });
+});
+
+    </script>
+</body>
+
+</html>

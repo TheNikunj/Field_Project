@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Image Upload</title>
+    <link rel="stylesheet" href="./mod.css">
+</head>
+<body>
+    <div class="admin-login-btn" onclick="openAdminModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        Admin Login
+    </div>
+
+    <div class="section-selector">
+        <select id="sectionSelect" onchange="changeSection()">
+            <option value="">Select Section</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="number-buttons">
+            <!-- Question number buttons will be generated here -->
+        </div>
+        <div class="chat-section">
+            <button class="upload-btn" onclick="openUploadModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                Upload Solution
+            </button>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Chat messages will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div class="modal" id="adminModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeAdminModal()">&times;</button>
+            <h2>Admin Login</h2>
+            <div class="form-group">
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" required>
+            </div>
+            <button onclick="loginAdmin()" class="submit-btn">Login</button>
+        </div>
+    </div>
+
+    <!-- Create Section Modal -->
+    <div class="modal" id="createSectionModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeCreateSectionModal()">&times;</button>
+            <h2>Create New Section</h2>
+            <div class="form-group">
+                <label for="sectionYear">Year:</label>
+                <input type="number" id="sectionYear" required min="2000">
+            </div>
+            <div class="form-group">
+                <label for="sectionName">Section Name:</label>
+                <input type="text" id="sectionName" required placeholder="e.g., Computer Science A">
+            </div>
+            <button onclick="createSection()" class="submit-btn">Create Section</button>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeUploadModal()">&times;</button>
+            <h2>Upload Solution</h2>
+            <div class="form-group">
+                <label for="questionNumber">Question Number (1-10):</label>
+                <input type="number" id="questionNumber" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="regNumber">Registration Number:</label>
+                <input type="text" id="regNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="imageUpload">Upload Images:</label>
+                <input type="file" id="imageUpload" accept="image/*" multiple>
+            </div>
+            <div class="image-preview" id="imagePreview">
+                <!-- Image previews will be shown here -->
+            </div>
+            <button onclick="submitAnswer()" class="submit-btn">Submit Solution</button>
+        </div>
+    </div>
+
+    <!-- Image Viewer -->
+    <div class="image-viewer" id="imageViewer">
+        <button class="close-viewer" onclick="closeImageViewer()">&times;</button>
+        <button class="nav-btn prev-btn" onclick="prevImage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <img id="viewerImage" src="" alt="Full size image">
+        <button class="nav-btn next-btn" onclick="nextImage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <button class="download-btn" onclick="downloadCurrentImage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+        </button>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduShare Hub</title>
+  <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Footer.css">
+  <link rel="stylesheet" href="header.css">
+  
+</head>
+
+<body>
+ 
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <div class="MainLogo">
+            <img src="Mainlogo.svg" alt="MainLogo" style="margin-left: 0px;">
+            <h1>EduShare Hub</h1>
+          </div>
+          <!-- <h1>EduShare Hub</h1> -->
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="/SignIN/signin.html">Sign In / Sign Up</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      
+    </div>
+  </header>
+  <div class="header-content">
+    <h1>EduShare Hub</h1>
+    <p>Empowering Students with Collaborative Learning Resources</p>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Features Grid -->
+    <div class="features-grid">
+      <!-- Enhanced Notes Sharing icon -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            <line x1="6" y1="8" x2="6" y2="8" />
+            <line x1="6" y1="12" x2="6" y2="12" />
+            <line x1="6" y1="16" x2="6" y2="16" />
+            <line x1="18" y1="8" x2="18" y2="8" />
+            <line x1="18" y1="12" x2="18" y2="12" />
+            <line x1="18" y1="16" x2="18" y2="16" />
+          </svg>
+        </div>
+        <h2>TOPPER Notes</h2>
+        <p>
+          Access comprehensive notes shared by seniors across all subjects.
+        </p>
+        <button class="btn" onclick="window.location.href='Notes/notes.html'">
+          Browse Notes
+        </button>
+      </div>
+
+      <!-- Mentorship -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <h2>Senior Mentors</h2>
+        <p>Connect with experienced seniors for guidance and mentorship.</p>
+        <button class="btn" onclick="window.location.href='Mentor/mentor.html'">
+          Find Mentor
+        </button>
+      </div>
+
+      <!-- Study Materials -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <path d="M14 2v6h6" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <line x1="10" y1="9" x2="8" y2="9" />
+          </svg>
+        </div>
+        <h2>Study Materials</h2>
+        <p>Access PDFs and PPTs provided by faculty members.</p>
+        <button class="btn" onclick="window.location.href='faculty/faculty.html'">
+          View Materials
+        </button>
+      </div>
+
+      <!-- PPT Services -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3h18v18H3z" />
+            <path d="m9 8 6 4-6 4Z" />
+          </svg>
+        </div>
+        <h2>PPT Services</h2>
+        <p>Get professional PPTs made for your presentations.</p>
+        <button class="btn" onclick="showModal('pptModal')">Order PPT</button>
+      </div>
+
+      <!-- IEEE Format -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+        </div>
+        <h2>IEEE Papers</h2>
+        <p>Professional IEEE format paper writing services.</p>
+        <button class="btn" onclick="showModal('ieeeModal')">
+          Request Paper
+        </button>
+      </div>
+
+      <!--Assignment Help -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+        </div>
+        <h2>Assignment Help</h2>
+        <p>Expert assignment writing for high-quality, researched work.</p>
+        <button class="btn" onclick="showModal('ieeeModal')">
+          Request Assignment Help
+        </button>
+      </div>
+
+      <!--Student MarketPlace -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+            <path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"></path>
+            <path d="M13 13h4"></path>
+          </svg>
+        </div>
+        <h2>Student Marketplace</h2>
+        <p>Quality educational supplies at student-friendly prices.</p>
+
+        <button class="btn" onclick="window.location.href='market.html'">
+          Browse Items
+        </button>
+      </div>
+    </div>
+
+    <!-- Featured Section -->
+    <section class="featured-section">
+      <h2>Why Choose EduShare Hub?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>For Students</h3>
+          <ul>
+            <li>Access quality study materials</li>
+            <li>Learn from experienced seniors</li>
+            <li>Save time on assignments</li>
+            <li>Affordable services</li>
+          </ul>
+        </div>
+        <div class="benefit-card">
+          <h3>For Contributors</h3>
+          <ul>
+            <li>Share your knowledge</li>
+            <li>Earn by helping others</li>
+            <li>Build your portfolio</li>
+            <li>Join our community</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@edusharehub.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduShare Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div id="notesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('notesModal')">&times;</span>
+      <h2>Browse Notes</h2>
+      <div class="notes-grid">
+        <!-- Notes will be dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <div id="mentorModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('mentorModal')">&times;</span>
+      <h2>Find a Mentor</h2>
+      <div class="mentors-grid">
+        <!-- Mentors will be dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <div id="materialsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('materialsModal')">&times;</span>
+      <h2>Study Materials</h2>
+      <div class="materials-grid">
+        <!-- Materials will be dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <div id="pptModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pptModal')">&times;</span>
+      <h2>Order PPT Service</h2>
+      <form id="pptForm" onsubmit="handlePPTSubmit(event)">
+        <div class="form-group">
+          <label for="pptTitle">Title</label>
+          <input type="text" id="pptTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="pptDescription">Description</label>
+          <textarea id="pptDescription" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pptDeadline">Deadline</label>
+          <input type="date" id="pptDeadline" required />
+        </div>
+        <button type="submit" class="btn">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="ieeeModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('ieeeModal')">&times;</span>
+      <h2>Request IEEE Paper</h2>
+      <form id="ieeeForm" onsubmit="handleIEEESubmit(event)">
+        <div class="form-group">
+          <label for="ieeeTitle">Paper Title</label>
+          <input type="text" id="ieeeTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="ieeeDescription">Description</label>
+          <textarea id="ieeeDescription" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="ieeeDeadline">Deadline</label>
+          <input type="date" id="ieeeDeadline" required />
+        </div>
+        <button type="submit" class="btn">Submit Request</button>
+      </form>
+    </div>
+  </div>
+  <div id="marketplaceModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('marketplaceModal')">&times;</span>
+      <h2>Available Items</h2>
+      <div class="item-grid" id="itemsContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

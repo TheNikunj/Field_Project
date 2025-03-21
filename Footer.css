@@ -1,0 +1,185 @@
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #0a3d62, #1e90ff);
+    color: #fff;
+    padding: 50px 20px;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #ffcc00;
+    margin-top: 5px;
+    transition: width 0.4s;
+}
+
+.footer-section:hover h3::after {
+    width: 80px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
+    transform: translateX(5px);
+}
+
+.footer-section p {
+    font-size: 1rem;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-section p:hover {
+    opacity: 1;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: transform 0.3s, color 0.3s;
+    position: relative;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* Featured Section Styling */
+.featured-section {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    background: #f4f9ff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.featured-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0a3d62;
+}
+
+.benefits-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.benefit-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    min-width: 280px;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1e90ff;
+}
+
+.benefit-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.benefit-card ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+    position: relative;
+    padding-left: 20px;
+}
+
+.benefit-card ul li::before {
+    content: '\2713';
+    color: #1e90ff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefits-grid {
+        flex-direction: column;
+    }
+}
