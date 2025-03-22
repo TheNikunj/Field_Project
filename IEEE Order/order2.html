@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - IEEE Formatting Services</title>
+    <link rel="stylesheet" href="iee.css">
+    <link rel="stylesheet" href="order2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="order-container">
+        <div class="order-form">
+            <h1>Place Your Order</h1>
+            
+            <div class="form-group">
+                <label for="title">Document Title</label>
+                <input type="text" id="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pages">Number of Pages</label>
+                <input type="number" id="pages" min="1" value="1">
+            </div>
+
+            <div class="speed-options">
+                <h3>Formatting Speed</h3>
+                <div class="option-cards">
+                    <div class="option-card" data-speed="standard">
+                        <h4>Standard</h4>
+                        <p>48-72 hours</p>
+                        <span class="price">$10/page</span>
+                    </div>
+                    <div class="option-card" data-speed="express">
+                        <h4>Express</h4>
+                        <p>24 hours</p>
+                        <span class="price">$15/page</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="citation-style">
+                <h3>Citation Style</h3>
+                <select id="citation-style">
+                    <option value="ieee">IEEE</option>
+                    <option value="apa">APA</option>
+                    <option value="mla">MLA</option>
+                    <option value="chicago">Chicago</option>
+                </select>
+            </div>
+
+            <div class="additional-elements">
+                <h3>Additional Elements</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="tables"> Tables</label>
+                    <label><input type="checkbox" value="graphs"> Graphs</label>
+                    <label><input type="checkbox" value="equations"> Equations</label>
+                    <label><input type="checkbox" value="references"> References</label>
+                    <label><input type="checkbox" value="figures"> Figures</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">Deadline</label>
+                <input type="date" id="deadline" required>
+            </div>
+
+            <div class="voice-note">
+                <h3>Voice Note</h3>
+                <button id="record-button" class="record-button">
+                    <i class="fas fa-microphone"></i> Record Message
+                </button>
+                <div id="recording-status"></div>
+            </div>
+
+            <button type="submit" class="submit-button">Place Order</button>
+        </div>
+
+        <div class="price-summary">
+            <div class="summary-card">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Base Price:</span>
+                    <span id="base-price">$0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Speed Premium:</span>
+                    <span id="speed-premium">$0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Additional Elements:</span>
+                    <span id="additional-price">$0</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="total-price">$0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="order2.js"></script>
+</body>
+</html>

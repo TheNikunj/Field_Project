@@ -84,6 +84,8 @@ body {
 }
 
 form {
+    margin-left: 70px;
+    margin-right: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +100,7 @@ form {
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(30, 60, 114, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 40px;
+    padding: 25px;
 }
 
 form.sign-up-form {
