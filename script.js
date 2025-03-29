@@ -223,3 +223,23 @@ function showAllSubjects() {
 
 
 // Cursor code in css
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function () {
+        this.classList.toggle("active");
+        navLinks.classList.toggle("open");
+    });
+
+    // Close menu when a link is clicked (for better UX on mobile)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function () {
+            menuToggle.classList.remove("active");
+            navLinks.classList.remove("open");
+        });
+    });
+});
+
+
+

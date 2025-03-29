@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Form</title>
+   <link rel="stylesheet" href="contact.css">
+   <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+</head>
+
+<body>
+   <div class="container">
+      <form action="https://api.web3forms.com/submit" method="POST">
+         <h3>Get in Touch</h3>
+         <input type="hidden" name="access_key" value="f0672ded-cfd2-440e-9cc6-eb8bd59141b5">
+
+         <input type="text" name="name" id="name" placeholder="Your Name" required>
+         <input type="email" name="email" id="email" placeholder="Email ID" required>
+         <input type="text" name="phone" id="phone" placeholder="Phone No." required>
+         <textarea name="message" id="message" rows="4" placeholder="How can I help you?" required></textarea>
+
+         <button type="submit">Send</button>
+      </form>
+   </div>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const numStars = 60; // Increased number of stars
+          const starsContainer = document.createElement("div");
+          starsContainer.classList.add("stars");
+          document.querySelector(".container").appendChild(starsContainer);
+      
+          for (let i = 0; i < numStars; i++) {
+              let star = document.createElement("div");
+              star.classList.add("star");
+              let size = Math.random() * 5 + 2; // Random size between 2px and 7px
+              let posX = Math.random() * 100; // Random X position
+              let posY = Math.random() * 100; // Random Y position
+              let duration = Math.random() * 5 + 3; // Random animation duration (3-8s)
+              let delay = Math.random() * 5; // Random animation delay (0-5s)
+      
+              star.style.width = size + "px";
+              star.style.height = size + "px";
+              star.style.top = posY + "%";
+              star.style.left = posX + "%";
+              star.style.animationDuration = duration + "s";
+              star.style.animationDelay = delay + "s";
+              starsContainer.appendChild(star);
+          }
+      });
+      </script>
+      
+
+
+</body>
+
+</html>

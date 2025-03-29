@@ -34,7 +34,17 @@ body {
     padding: 0 2rem;
 }
 
+.MainLogo a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent */
+    display: flex; /* Makes logo and text inline */
+    align-items: center; /* Aligns logo and text */
+    gap: 10px; /* Adds spacing between logo and text */
+}
 
+.MainLogo a h1 {
+    color: white; /* Sets text color to white */
+}
 
 
 

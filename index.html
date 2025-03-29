@@ -9,27 +9,38 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="Footer.css">
   <link rel="stylesheet" href="header.css">
-  
+
 </head>
 
 <body>
- 
+
   <!-- Header -->
   <header class="header">
     <div class="container">
       <nav class="navbar">
         <div class="logo">
           <div class="MainLogo">
-            <img src="Mainlogo.svg" alt="MainLogo" style="margin-left: 0px;">
-            <h1>EduShare Hub</h1>
+            <a href="index.html">
+              <img src="Mainlogo.svg" alt="MainLogo" style="margin-left: 0px;">
+              <h1>EduShare Hub</h1>
+            </a>
           </div>
           <!-- <h1>EduShare Hub</h1> -->
         </div>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">Contribute</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- Resources Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Resources ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="market.html">Student MarketPlace</a></li>
+              <li><a href="prev.html">Exam Papers</a></li>
+              <li><a href="/PPT Order/PPT1.html">PPT Services</a></li>
+              <li><a href="/IEEE Order/iee.html">IEEE Services</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="/SignIN/signin.html">Sign In / Sign Up</a></li>
         </ul>
         <div class="menu-toggle">
@@ -38,7 +49,7 @@
           <span></span>
         </div>
       </nav>
-      
+
     </div>
   </header>
   <div class="header-content">
@@ -65,7 +76,7 @@
             <line x1="18" y1="16" x2="18" y2="16" />
           </svg>
         </div>
-        <h2>TOPPER Notes</h2>
+        <h2>Senior Notes</h2>
         <p>
           Access comprehensive notes shared by seniors across all subjects.
         </p>
@@ -134,7 +145,7 @@
             <polyline points="14 2 14 8 20 8" />
           </svg>
         </div>
-        <h2>IEEE Papers</h2>
+        <h2>IEEE Services</h2>
         <p>Professional IEEE format paper writing services.</p>
         <button class="btn" onclick="window.location.href='IEEE Order/iee.html'">
           Request Paper
@@ -142,22 +153,22 @@
       </div>
 
       <!-- Exam Papers -->
-<div class="feature-card">
-  <div class="feature-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <line x1="8" y1="2" x2="8" y2="6" />
-      <line x1="16" y1="2" x2="16" y2="6" />
-      <line x1="3" y1="10" x2="21" y2="10" />
-    </svg>
-  </div>
-  <h2>Exam Papers</h2>
-  <p>Find previous year exam papers for effective preparation.</p>
-  <button class="btn" onclick="showModal('previousYearModal')">
-    View Previous Year Questions
-  </button>
-</div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </div>
+        <h2>Exam Papers</h2>
+        <p>Find previous year exam papers for effective preparation.</p>
+        <button class="btn" onclick="window.location.href='prev.html'">
+          View Previous Year Questions
+        </button>
+      </div>
 
 
 
