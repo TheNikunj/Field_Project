@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactBtn.style.transform = 'scale(0.95)';
         setTimeout(() => {
             contactBtn.style.transform = 'scale(1)';
-            window.location.href = 'mailto:contact@educationsharehub.com';
+            window.location.href = 'mailto:educationsharehub@gmail.com';
         }, 150);
     });
 

@@ -1,63 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Notes Portal</title>
-    <link rel="stylesheet" href="notes.css">
-</head>
-<body>
-    <nav>
-        <div class="logo">PDF Notes Portal</div>
-        <button id="adminLoginBtn" class="admin-btn">Admin Login</button>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Notes Portal</title>
+    <link rel="stylesheet" href="notes.css" />
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../Footer.css">
+  </head>
+  <body>
+   
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <div class="MainLogo">
+            <a href="../index.html">
+              <img src="../Mainlogo.svg" alt="MainLogo" style="margin-left: 0px;">
+             
+            </a>
+          </div>
+          <!-- <h1>EduShare Hub</h1> -->
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <!-- Resources Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Resources ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="../market.html">Student MarketPlace</a></li>
+              <li><a href="../prev.html">Exam Papers</a></li>
+              <li><a href="/PPT Order/PPT1.html">PPT Services</a></li>
+              <li><a href="/IEEE Order/iee.html">IEEE Services</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/SignIN/signin.html">Sign In / Sign Up</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
 
-    <!-- Admin Login Modal -->
-    <div id="adminModal" class="modal">
+    </div>
+  </header>
+
+    <div id="app">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search notes..." />
+        <div class="filters">
+          <select id="subject-filter">
+            <option value="">All Topics</option>
+            <option value="dsa">Data Structures & Algorithms</option>
+            <option value="os">Operating Systems</option>
+            <option value="dbms">Database Management</option>
+            <option value="cn">Computer Networks</option>
+            <option value="oops">Object-Oriented Programming</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="notes-container" id="notes-container">
+        <!-- Notes will be dynamically inserted here -->
+      </div>
+      
+      <div class="preview-modal" id="preview-modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Admin Login</h2>
-            <form id="adminForm">
-                <input type="text" id="username" placeholder="Username" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
+          <span class="close-button">&times;</span>
+          <h2 id="preview-title">Note Preview</h2>
+          <div class="preview-image">
+            <img id="preview-img" src="" alt="Preview of notes">
+          </div>
+          <div class="preview-actions">
+            <button id="download-button" class="download-btn">Download PDF</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <!-- Edit PDF Modal -->
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Edit PDF Details</h2>
-            <form id="editForm">
-                <input type="hidden" id="editPdfId">
-                <input type="text" id="editTitle" placeholder="PDF Title" required>
-                <input type="file" id="editFile" accept=".pdf">
-                <img id="editThumbnail" class="thumbnail-preview" src="" alt="">
-                <button type="submit">Save Changes</button>
-            </form>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
-    </div>
-
-    <!-- Admin Upload Section (Hidden by default) -->
-    <div id="adminSection" class="admin-section hidden">
-        <h2>Upload PDF Notes</h2>
-        <form id="uploadForm">
-            <input type="text" id="pdfTitle" placeholder="PDF Title" required>
-            <input type="file" id="pdfFile" accept=".pdf" required>
-            <img id="thumbnailPreview" class="thumbnail-preview" src="" alt="">
-            <button type="submit">Upload PDF</button>
-        </form>
-    </div>
-
-    <!-- User Section -->
-    <main>
-        <div class="pdf-grid" id="pdfGrid">
-            <!-- PDF cards will be dynamically added here -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@edusharehub.com</p>
+          <p>Phone: (123) 456-7890</p>
         </div>
-    </main>
-
-    <script src="notes.js"></script>
-</body>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduShare Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+    <script src="notes.js" type="module"></script>
+  </body>
 </html>

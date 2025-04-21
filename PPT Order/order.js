@@ -1,8 +1,8 @@
 // Price calculation
 const prices = {
-    '10': { standard: 1200, express: 2000 },
-    '15': { standard: 1800, express: 3000 },
-    '20': { standard: 2500, express: 4000 }
+    '10': { standard: 120, express: 200 },
+    '15': { standard: 180, express: 300 },
+    '20': { standard: 250, express: 400 }
 };
 
 function updatePrice() {
